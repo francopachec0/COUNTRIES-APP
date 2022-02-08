@@ -29,10 +29,11 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     area: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.INTEGER,
     },
     population: {
       type: DataTypes.INTEGER,
     }
-  });
+  }, {timestamps: false}
+  );
 };
