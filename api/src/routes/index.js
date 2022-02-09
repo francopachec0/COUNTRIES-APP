@@ -79,11 +79,25 @@ router.post('/activity', async (req, res) => {
 
   /*
   {
-    "name": "surf",
+    "name": "bailar cumbia",
     "difficulty": "4",
-    "duration": "4",
-    "season": "Summer",
-  }
+    "duration": "6",
+    "season": "Spring",
+    "countries": ["Argentina", "Chile"]
+}
   */
+
+router.get('/activities', async (req, res) => {
+  try {
+    const activities = await Activity.findAll({
+      attributes: ["id", "name", "difficulty", "duration", "season"],
+      include: Country,
+    });
+    res.status(200).send(activities);
+  } catch (error) {
+    res.status(404).send(error);
+  }
+});
+
 
 module.exports = router;
