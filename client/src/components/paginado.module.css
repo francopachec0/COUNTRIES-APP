@@ -1,0 +1,10 @@
+.paginado {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.li {
+    float: left;
+    margin: 0px 2px;
+}

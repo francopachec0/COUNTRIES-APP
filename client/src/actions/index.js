@@ -10,4 +10,45 @@ export function getCountries() {
     };
 };
 
+export function filterByContinent (payload) {
+    return {    
+        type: 'FILTER_BY_CONTINENT',
+        payload
+    }
+};
 
+export function getActivities(){
+    return async function(distpach){
+    try {
+        const allActivities = await axios.get("http://localhost:3001/activities");
+        return distpach({
+            type: 'GET_ACTIVITIES',
+            payload: allActivities.data
+        })
+    } catch (error) {
+        return(error)
+    }       
+    }
+}
+
+
+export function filterActivity(payload){
+    return {
+            type: 'FILTER_ACTIVITY',
+            payload
+        }
+};
+
+export function orderByName (payload) {
+    return {
+        type: 'ORDER_BY_NAME',
+        payload
+    }
+};
+
+export function filterByPopulation(payload) {
+    return {
+      type: "FILTER_BY_POPULATION",
+      payload,
+    };
+  };
