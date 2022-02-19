@@ -1,0 +1,32 @@
+.top_nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 10%;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.link_create {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link_create:hover{
+    color: #4895ef;
+    transition: 0.2 ease;
+}
+
+.link_create:visited{
+    color: none;
+}
+
+.btn_reload {
+    cursor: pointer;
+}

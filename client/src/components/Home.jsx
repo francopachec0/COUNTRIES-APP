@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import { getCountries, filterByContinent, filterActivity, orderByName, filterByPopulation, getActivities } from "../actions";
 import Card from "./Card";
 import Paginado from "./Paginado";
+import SearchBar from "./SearchBar";
 import './styles/Card.css'
+import './styles/Home.css'
 
 
 export default function Home() {
@@ -64,10 +66,13 @@ function handleFilterByPopulation(e) {
   return (
     <div>
       <div>
+        <div className="top_nav">
       <h1>Countries Api</h1>
-      <Link to="/activity">Create your Activity</Link> <br />
-      <button onClick={(e) => {handleClick(e)}}>Reload all Countries</button>
-      <div>
+      <Link className="link_create" to="/activity">Create your Activity</Link>
+      <button className="btn_reload" onClick={(e) => {handleClick(e)}}>Reload all Countries</button>
+      <SearchBar />
+        </div>
+      <div className="filters">
         <select onChange={e => handleOrderByName(e)}>
           <option disabled>Order by Name</option>
           <option value="asc">From A to Z</option>

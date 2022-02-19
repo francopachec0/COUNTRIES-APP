@@ -19,6 +19,11 @@ function rootReducer(state = initialState, action) {
           ...state,
           countries: continentFiltered
         };
+        case 'GET_COUNTRIES_NAME':
+          return {
+            ...state,
+            countries: action.payload
+          }
         case 'ORDER_BY_NAME':            
         let sortedArray = action.payload === 'asc' ?
           state.countries.sort(function(a, b) {

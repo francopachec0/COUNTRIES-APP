@@ -31,6 +31,20 @@ export function getActivities(){
     }
 }
 
+export function getCountriesName(payload) {
+    return async function (dispatch) {
+        try {
+            let json = await axios.get('http://localhost:3001/countries?name=' + payload);
+            return dispatch({
+                type: 'GET_COUNTRIES_NAME',
+                payload: json.data
+            })
+        } catch (err) {
+            console.log(err)
+        }
+    }
+}
+
 
 export function filterActivity(payload){
     return {
