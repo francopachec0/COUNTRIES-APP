@@ -1,7 +1,8 @@
 const initialState = {
   countries: [],
   allCountries: [],
-  activities: []
+  activities: [],
+  details: []
 };
 
 function rootReducer(state = initialState, action) {
@@ -61,6 +62,15 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 countries: filterByPopulation,
               };
+              case 'POST_ACTIVITY':
+                return {
+                  ...state
+                };
+              case 'GET_DETAILS':
+                return {
+                  ...state,
+                  details: action.payload
+                }
               case 'GET_ACTIVITIES':
                 return{
                     ...state,                    

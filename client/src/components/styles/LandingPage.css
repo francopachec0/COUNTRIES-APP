@@ -1,0 +1,36 @@
+body {
+    background-image: url('./images/4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.landing_title {
+    color: #ffffff;
+    font-size: 55px;
+}
+
+.landing_btn {
+    width: 250px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 20px;
+    color: #669bbc;
+    cursor: pointer;
+    transform: translateX(220%);
+    border: 2px solid #ffffff;
+    transition: all 0.3s ease;
+}
+
+.landing_btn:hover {
+    color: #ffffff;
+    background: none;
+}
+
+.footer {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 23%;
+    margin-bottom: 0%;
+    font-size: 20px;
+    font-weight: bold;
+}

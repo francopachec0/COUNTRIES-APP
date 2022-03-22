@@ -67,20 +67,20 @@ function handleFilterByPopulation(e) {
     <div>
       <div>
         <div className="top_nav">
-      <h1>Countries Api</h1>
-      <Link className="link_create" to="/activity">Create your Activity</Link>
-      <button className="btn_reload" onClick={(e) => {handleClick(e)}}>Reload all Countries</button>
-      <SearchBar />
+          <h1 className="home_title">Countries Api</h1>
+          <Link className="link_create" to="/activity">Create your Activity</Link>
+          <button className="btn_reload" onClick={(e) => {handleClick(e)}}>Reload all Countries</button>
+          <SearchBar />
         </div>
-      <div className="filters">
-        <select onChange={e => handleOrderByName(e)}>
-          <option disabled>Order by Name</option>
-          <option value="asc">From A to Z</option>
-          <option value="desc">From Z to A</option>
+        <div className="filters">
+          <select onChange={e => handleOrderByName(e)}>
+            <option disabled>Order by Name</option>
+            <option value="asc">From A to Z</option>
+            <option value="desc">From Z to A</option>
         </select>
 
         <select onChange={e => handleFilterByPopulation(e)}>
-         <option disabled>Order by Population</option>
+          <option disabled>Order by Population</option>
           <option value="small-countries">Small Countries</option>
           <option value="big-countries">Big Countries</option>
           <option value="all">All</option>
@@ -117,18 +117,19 @@ function handleFilterByPopulation(e) {
       
       
       <div className="cards">
-      {currentCountries?.map((c) => {
-        return (
-          <Card
-            flags={c.flags}
-            name={c.name}
-            continent={c.continent}
-            key={c.id}
-          />
-        );
-      })}
+        {currentCountries?.map((c) => {
+          return (
+            <Card
+              flags={c.flags}
+              name={c.name}
+              continent={c.continent}
+              key={c.id}
+            />
+          );
+        })}
       </div>
       <br />
     </div>
   );
 }
+

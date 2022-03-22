@@ -31,6 +31,13 @@ export function getActivities(){
     }
 }
 
+export function postActivity(payload) {
+    return async function(distpach){
+        const response = await axios.post("http://localhost:3001/activity", payload);
+        return response;
+    }
+}
+
 export function getCountriesName(payload) {
     return async function (dispatch) {
         try {
@@ -66,3 +73,17 @@ export function filterByPopulation(payload) {
       payload,
     };
   };
+
+export function getDetails(id) {
+    return async function (dispatch) {
+        try{
+            let json = await axios.get('http://localhost:3001/countries/' + id);
+            return dispatch({
+                type: 'GET_DETAILS',
+                payload: json.data
+            })
+        } catch (err) {
+            console.log(err)
+    }
+    }
+}  

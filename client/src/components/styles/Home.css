@@ -1,9 +1,14 @@
+
 .top_nav {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     gap: 10%;
+}
+
+.home_title {
+    color: #ffffff;
 }
 
 .filters {
@@ -16,11 +21,12 @@
 .link_create {
     text-decoration: none;
     cursor: pointer;
+    color: #ffffff;
+    transition: 0.2 ease;
 }
 
 .link_create:hover{
-    color: #4895ef;
-    transition: 0.2 ease;
+    text-decoration: underline;
 }
 
 .link_create:visited{
